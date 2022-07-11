@@ -22,6 +22,12 @@ float HitSphere(float3 wp, float3 rayOrigin, float3 rayDirection, float3 sphereP
 	return distanceToHit;
 }
 
+half HitFlatPlane(half planeHeight, half pointHeight, half3 direction)
+{
+    return (planeHeight - pointHeight) / direction.y;
+}
+
+
 fixed SphereSoftShadow(float3 ro, half3 rd, float3 spherePos, half sphereRadius)
 {
 	const half shadowHardness = 50.0;
