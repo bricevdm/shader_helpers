@@ -103,6 +103,13 @@ half2 Rotate2D(half2 _in, half _angle) {
 	return o;
 }
 
+half3 rotate3D(half3 _in, half3 _axis, half _angle)
+{
+	half s, c;
+	sincos(_angle, s, c);
+	return _in * c + cross(_in, _axis) * s;
+}
+
 float3x3 RotationMatrix(float3 _axis, half _angle) {
 
 	half s, c;
